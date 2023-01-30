@@ -1,0 +1,71 @@
+# xms_client.CloudVolumeAttachmentsApi
+
+All URIs are relative to *https://localhost/v1*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**list_cloud_volume_attachments**](CloudVolumeAttachmentsApi.md#list_cloud_volume_attachments) | **GET** /cloud-volume-attachments/ | 
+
+
+# **list_cloud_volume_attachments**
+> CloudVolumeAttachmentsResp list_cloud_volume_attachments(limit=limit, offset=offset, cloud_instance_id=cloud_instance_id)
+
+
+
+List cloud volume attachments
+
+### Example
+```python
+from __future__ import print_function
+import time
+import xms_client
+from xms_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: tokenInHeader
+configuration = xms_client.Configuration()
+configuration.api_key['Xms-Auth-Token'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Xms-Auth-Token'] = 'Bearer'
+# Configure API key authorization: tokenInQuery
+configuration = xms_client.Configuration()
+configuration.api_key['token'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = xms_client.CloudVolumeAttachmentsApi(xms_client.ApiClient(configuration))
+limit = 789 # int | paging param (optional)
+offset = 789 # int | paging param (optional)
+cloud_instance_id = 789 # int | cloud instance id (optional)
+
+try:
+    api_response = api_instance.list_cloud_volume_attachments(limit=limit, offset=offset, cloud_instance_id=cloud_instance_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CloudVolumeAttachmentsApi->list_cloud_volume_attachments: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **int**| paging param | [optional] 
+ **offset** | **int**| paging param | [optional] 
+ **cloud_instance_id** | **int**| cloud instance id | [optional] 
+
+### Return type
+
+[**CloudVolumeAttachmentsResp**](CloudVolumeAttachmentsResp.md)
+
+### Authorization
+
+[tokenInHeader](../README.md#tokenInHeader), [tokenInQuery](../README.md#tokenInQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
